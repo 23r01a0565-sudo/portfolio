@@ -1,0 +1,226 @@
+/* ================= RESET ================= */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* ================= BODY ================= */
+body {
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(-45deg, #0f2027, #203a43, #2c5364, #1c1c1c);
+  background-size: 400% 400%;
+  animation: gradientBG 15s ease infinite;
+  color: #ffffff;
+  text-align: center;
+  scroll-behavior: smooth;
+}
+
+/* Animated Background */
+@keyframes gradientBG {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* ================= HERO SECTION ================= */
+.hero {
+  padding: 70px 20px;
+  animation: fadeIn 1s ease-in-out;
+}
+
+.profile-pic {
+  width: 180px;
+  height: 180px;
+  object-fit: cover;
+  object-position: top center;
+  border-radius: 50%;
+  border: 4px solid rgba(255,255,255,0.6);
+  box-shadow: 0 0 30px rgba(0,255,255,0.4);
+  margin-bottom: 20px;
+  transition: 0.4s ease;
+}
+
+.profile-pic:hover {
+  transform: scale(1.07);
+}
+
+/* ================= HEADINGS ================= */
+h1 {
+  font-size: 2.5rem;
+  font-weight: 700;
+}
+
+h2 {
+  font-size: 1.9rem;
+  margin-bottom: 15px;
+  position: relative;
+}
+
+h2::after {
+  content: "";
+  width: 60px;
+  height: 3px;
+  background: #00f5d4;
+  display: block;
+  margin: 8px auto;
+  border-radius: 10px;
+}
+
+h3 {
+  margin: 8px 0;
+}
+
+/* ================= BUTTON ================= */
+.btn {
+  display: inline-block;
+  margin-top: 18px;
+  padding: 12px 28px;
+  background: linear-gradient(45deg, #00f5d4, #00bbf9);
+  color: #000;
+  font-weight: 500;
+  text-decoration: none;
+  border-radius: 30px;
+  transition: 0.3s ease;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+}
+
+.btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 25px rgba(0,0,0,0.5);
+}
+
+/* ================= SECTIONS ================= */
+.section {
+  padding: 40px 20px;
+  opacity: 0;
+  transform: translateY(40px);
+  transition: all 0.8s ease;
+}
+
+/* ================= CARDS ================= */
+.card {
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(10px);
+  padding: 18px;
+  margin: 12px auto;
+  width: 85%;
+  max-width: 800px;
+  border-radius: 20px;
+  transition: 0.4s ease;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.3);
+}
+
+.card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 15px 35px rgba(0,0,0,0.5);
+}
+
+/* ================= SKILLS ================= */
+.skills span {
+  display: inline-block;
+  background: rgba(255,255,255,0.15);
+  padding: 8px 16px;
+  margin: 6px;
+  border-radius: 30px;
+  transition: 0.3s ease;
+  cursor: pointer;
+}
+
+.skills span:hover {
+  background: linear-gradient(45deg, #00f5d4, #00bbf9);
+  color: #000;
+  transform: scale(1.08);
+}
+
+/* ================= TEXT ================= */
+p {
+  line-height: 1.6;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+ul li {
+  margin: 6px 0;
+}
+
+/* ================= LINKS ================= */
+a {
+  color: #00f5d4;
+  text-decoration: none;
+  margin: 8px;
+  font-weight: 500;
+  transition: 0.3s;
+}
+
+a:hover {
+  color: #ffffff;
+  text-shadow: 0 0 8px #00f5d4;
+}
+
+/* ================= FOOTER ================= */
+footer {
+  padding: 20px;
+  background: rgba(0,0,0,0.4);
+  backdrop-filter: blur(5px);
+  margin-top: 30px;
+}
+
+/* ================= ANIMATIONS ================= */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* ================= RESPONSIVE ================= */
+@media (max-width: 768px) {
+  h1 { font-size: 2rem; }
+  h2 { font-size: 1.6rem; }
+  .card { width: 95%; }
+}
+/* ================= CERTIFICATE GRID ================= */
+
+.cert-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 15px;
+  margin-top: 20px;
+}
+
+.cert-item img {
+  width: 100%;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: 0.3s ease;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+}
+
+.cert-item img:hover {
+  transform: scale(1.05);
+}
+
+/* ================= FULLSCREEN MODAL ================= */
+
+.cert-modal {
+  display: none;
+  position: fixed;
+  z-index: 999;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.9);
+  justify-content: center;
+  align-items: center;
+}
+
+.cert-modal img {
+  max-width: 90%;
+  max-height: 90%;
+  border-radius: 15px;
+}
